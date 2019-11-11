@@ -1,8 +1,16 @@
 import de.fayard.OrderBy
-
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle:3.5.2")
+        classpath(kotlin("gradle-plugin", version = "1.3.50"))
+    }
+}
 plugins {
-    id("de.fayard.refreshVersions").version("0.8.0")
-    `build-scan`
+    id("de.fayard.refreshVersions")
 }
 group = "de.fayard"
 
@@ -23,10 +31,4 @@ refreshVersions {
 
 tasks.register<DefaultTask>("hello") {
     group = "Custom"
-}
-
-buildScan {
-    setTermsOfServiceUrl("https://gradle.com/terms-of-service")
-    setTermsOfServiceAgree("yes")
-    publishAlways()
 }
