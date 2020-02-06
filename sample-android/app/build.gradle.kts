@@ -10,6 +10,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.kapt")
     id("kotlin-android-extensions")
+    id("com.squareup.sqldelight")
 }
 
 apply(from = "android.gradle")
@@ -25,6 +26,7 @@ dependencies {
     implementation(Google.material)
     implementation(AndroidX.lifecycle.runtime)
     implementation(AndroidX.lifecycle.extensions)
+    implementation("com.squareup.sqldelight:sqlite-driver:1.2.2")
     kapt(AndroidX.lifecycle.compiler)
     testImplementation(Testing.junit4)
     androidTestImplementation(AndroidX.test.core)

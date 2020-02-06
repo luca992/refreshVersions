@@ -1,5 +1,17 @@
 import de.fayard.OrderBy
 
+buildscript {
+    repositories {
+        google()
+        jcenter()
+
+    }
+    dependencies {
+        classpath ("com.squareup.sqldelight:gradle-plugin:1.2.2")
+    }
+}
+
+
 plugins {
     id("de.fayard.refreshVersions").version("0.8.0")
     `build-scan`
